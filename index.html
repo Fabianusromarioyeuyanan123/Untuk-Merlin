@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Merlin ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --text: #ffffff;
+            --accent: #ff4d6d;
+            --accent-glow: rgba(255, 77, 109, 0.5);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent; 
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a0a;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        #overlay {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle, #222, #000);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 40px 25px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            display: none;
+            z-index: 10;
+            position: relative;
+            animation: cardAppear 1.5s ease;
+        }
+
+        @keyframes cardAppear {
+            from { opacity: 0; transform: scale(0.9) translateY(30px); filter: blur(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+        }
+
+        /* Video Wrapper & Style */
+        .profile-wrapper {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 25px;
+        }
+
+        .profile-video {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            background: #222;
+        }
+
+        .profile-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            background: var(--accent);
+            filter: blur(15px);
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        #text-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            min-height: 80px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .footer-btn {
+            padding: 15px 40px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px var(--accent-glow);
+        }
+
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--glass);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 100;
+            border: 1px solid var(--glass-border);
+            font-size: 1.2rem;
+        }
+
+        .heart-float {
+            position: absolute;
+            color: var(--accent);
+            pointer-events: none;
+            z-index: 1;
+            filter: drop-shadow(0 0 5px var(--accent));
+            animation: moveUp 4s ease-in forwards;
+        }
+
+        @keyframes moveUp {
+            0% { transform: translateY(110vh) translateX(0) rotate(0deg) scale(0); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { transform: translateY(-20vh) translateX(20px) rotate(45deg) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="music-control" onclick="toggleMusic()" id="musicBtn" style="display:none;">🎵</div>
+
+    <div id="overlay">
+        <h2 style="margin-bottom: 30px; font-weight: 300; letter-spacing: 2px;">SPECIAL FOR YOU</h2>
+        <button class="footer-btn" onclick="init()">Buka Sekarang Bocillll ❤️</button>
+    </div>
+
+    <audio id="mySong" loop>
+        <source src="alamak.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="glass-card" id="mainCard">
+        <div class="profile-wrapper">
+            <video class="profile-video" id="merlinVideo" loop muted playsinline>
+                <source src="video1.mp4" type="video/mp4">
+                Browser kamu tidak mendukung video.
+            </video>
+        </div>
+        
+        <h1 id="titleText">Halo Sayangku,<br>Merlin</h1>
+        <div id="text-content"></div>
+        <button id="nextBtn" class="footer-btn" style="visibility:hidden;" onclick="nextMessage()">Lanjut ❤️</button>
+    </div>
+
+<script>
+    const song = document.getElementById("mySong");
+    const video = document.getElementById("merlinVideo");
+    const textContent = document.getElementById("text-content");
+    const nextBtn = document.getElementById("nextBtn");
+    
+    const messages = [
+        "Mungkin kata-kata tidak pernah cukup untuk menjelaskan sa punya perasaan..",
+        "Setiap detik bersamamu adalah bagian favorit dalam perjalanan hidupku. ✨",
+        "syg bukan cuma sekadar pasangan, tapi juga tujuanku di masa depan.",
+        "Terima kasih sudah memilihku, meski aku masih jauh dari kata sempurna.",
+        "I Love You Emanuela Merlin Tandi, Today, Tomorrow, and Forever ❤️",
+    ];
+
+    let currentMsg = 0;
+
+    function init() {
+        const overlay = document.getElementById("overlay");
+        overlay.style.opacity = "0";
+        overlay.style.transform = "scale(1.1)";
+        
+        setTimeout(() => {
+            overlay.style.display = "none";
+            document.getElementById("mainCard").style.display = "block";
+            document.getElementById("musicBtn").style.display = "flex";
+            
+            // Putar musik dan video setelah interaksi user
+            song.play().catch(e => console.log("Music blocked"));
+            video.play().catch(e => console.log("Video blocked"));
+            
+            typeWriter();
+            setInterval(createHeart, 400);
+        }, 1000);
+    }
+
+    function typeWriter() {
+        let i = 0;
+        textContent.innerHTML = "";
+        textContent.style.opacity = "1";
+        nextBtn.style.visibility = "hidden";
+        
+        function typing() {
+            if (i < messages[currentMsg].length) {
+                textContent.innerHTML += messages[currentMsg].charAt(i);
+                i++;
+                setTimeout(typing, 45);
+            } else {
+                if(currentMsg < messages.length - 1) {
+                    nextBtn.style.visibility = "visible";
+                }
+            }
+        }
+        typing();
+    }
+
+    function nextMessage() {
+        textContent.style.opacity = "0";
+        setTimeout(() => {
+            if (currentMsg < messages.length - 1) {
+                currentMsg++;
+                typeWriter();
+            }
+        }, 300);
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        const icons = ["❤️", "💖", "✨", "🌸"];
+        heart.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+        heart.className = "heart-float";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 10 + 15) + "px";
+        heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+    }
+
+    function toggleMusic() {
+        if (song.paused) {
+            song.play();
+            document.getElementById("musicBtn").innerHTML = "🎵";
+        } else {
+            song.pause();
+            document.getElementById("musicBtn").innerHTML = "🔇";
+        }
+    }
+</script>
+</body>
+</html>
